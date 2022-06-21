@@ -29,7 +29,7 @@ describe('<App /> component', () => {
     })
 
 });
-/*
+
 describe('<App /> integration', () => {
 
     test('App passes "events" state as a prop to EventList', () => {
@@ -92,4 +92,4 @@ describe('<App /> integration', () => {
     })
 
 
-});*/
+});

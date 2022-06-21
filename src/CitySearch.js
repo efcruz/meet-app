@@ -4,7 +4,9 @@ class CitySearch extends Component {
     state = {
 
         query: '',
-        suggestions: []
+        suggestions: [],
+        showSuggestions: undefined,
+        infoText:''
       }
 
       handleInputChanged = (event) => {
@@ -12,16 +14,27 @@ class CitySearch extends Component {
         const suggestions = this.props.locations.filter((location) => {
           return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
         });
-        this.setState({
-          query: value,
-          suggestions,
-        });
+        if (suggestions.length === 0) {
+            this.setState({
+              query: value,
+              infoText: 'We can not find the city you are looking for. Please try another city',
+            });
+          } else {
+            return this.setState({
+                query: value,
+                suggestions,
+                infoText:''
+            });
+        }
       };
 
       handleItemClicked = (suggestion) => {
         this.setState({
-          query: suggestion
+          query: suggestion,
+          showSuggestions: false
         });
+      
+        this.props.updateEvents(suggestion);
       }
       
     render() {
@@ -32,15 +45,16 @@ class CitySearch extends Component {
             className="city"
             value={this.state.query}
             onChange={this.handleInputChanged}
+            onFocus={() => { this.setState({ showSuggestions: true }) }}
             />
-           <ul className="suggestions">
+           <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
                 {this.state.suggestions.map((suggestion) => (
                     <li
                     key={suggestion}
                     onClick={() => this.handleItemClicked(suggestion)}
                     >{suggestion}</li>
                 ))}
-                <li>
+                <li key='all' onClick={() => this.handleItemClicked("all")}>
                     <b>See all cities</b>
                 </li>
             </ul>
