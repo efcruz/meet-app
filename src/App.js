@@ -11,7 +11,8 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    numberOfEvents: 32
+    numberOfEvents: 32,
+    currentLocation: 'all',
   }
 
   componentDidMount() {
@@ -44,11 +45,14 @@ class App extends Component {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-      this.setState({
-        events: locationEvents
-      });
-    });
-  }
+        if (this.mounted) {
+          this.setState({
+            events: locationEvents.slice(0, this.state.numberOfEvents),
+            currentLocation: location,
+          });
+        }
+        });
+      }
 
   render() {
     const { events, locations, numberOfEvents } = this.state;
