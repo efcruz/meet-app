@@ -54,6 +54,12 @@ input[type="number"] {
   justify-content: center;
 }
 
+.city-label {
+  position: absolute;
+  margin-left: 6.5rem;
+  margin-top: -1.5rem;
+}
+
 .city {
   width: 250px;
 }
@@ -174,7 +180,7 @@ input[type="number"] {
 .Alert {
   position: absolute;
   white-space: nowrap;
-  bottom: 2.5rem;
+  bottom: 4rem;
   margin-left: -6rem;
   margin-right: auto;
 }
