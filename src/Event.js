@@ -27,11 +27,11 @@ class Event extends Component {
               <p className="event-dateTime">{event.start.dateTime} ({event.start.timeZone})</p>
               <p className="event-location">{event.location}</p>
             </div>
-            <div 
+            <button 
                 className={`details-button ${collapsed ? "show" : "hide"}-details`}
                 onClick={this.handleClick}>
             {collapsed ? "Show Details" : "Hide Details"}
-            </div>
+            </button>
 
             {!collapsed &&
               <div className={`extra-details ${this.state.collapsed ? "hide" : "show"}`}>
