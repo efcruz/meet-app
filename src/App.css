@@ -172,8 +172,11 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  white-space: nowrap;
+  bottom: 2.5rem;
+  margin-left: -6rem;
+  margin-right: auto;
 }
 
 .data-vis-wrapper {

@@ -6,7 +6,6 @@ class NumberOfEvents extends Component {
         super();
      
         this.state = {
-           
             errorText: ''
         }
       }
