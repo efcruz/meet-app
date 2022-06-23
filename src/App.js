@@ -60,13 +60,18 @@ class App extends Component {
 
     return (
       <div className="App">
+         {!navigator.onLine && (
+            <InfoAlert style={{ color: "gray" }}>
+            Offline mode. Events have been loaded from local storage
+            </InfoAlert>
+          )}
         <h1 className='page-title'>Meet App</h1>
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+        <CitySearch locations={locations} updateEvents={this.updateEvents} />
        
         <NumberOfEvents 
             numberOfEvents={numberOfEvents} 
             updateNumberOfEvents={this.updateNumberOfEvents}/>
-        <EventList events={this.state.events} />
+        <EventList events={events} />
       </div>
     );
   }
