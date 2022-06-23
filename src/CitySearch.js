@@ -44,8 +44,8 @@ class CitySearch extends Component {
     render() {
         return (
           <div className="CitySearch">
-              <InfoAlert className="Alert" text={this.state.infoText} />
-              <label className='city-label' for="name">Enter a city:</label>
+              <InfoAlert className="alert-city" text={this.state.infoText} />
+              <label className='city-label'>Enter a city:</label>
             <input
             id="name"
             type="text"
