@@ -178,6 +178,10 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
+.offline-alert-container {
+  position: relative;
+}
+
 .Alert {
   position: absolute;
   white-space: nowrap;
