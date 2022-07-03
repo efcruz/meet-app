@@ -9,7 +9,7 @@ import { extractLocations, getEvents } from '../api';
 
 describe('<App /> component', () => {
     let AppWrapper;
-    beforeAll (() => {
+    beforeAll(() => {
         AppWrapper = shallow(<App />);
     });
 
@@ -33,7 +33,7 @@ describe('<App /> component', () => {
 describe('<App /> integration', () => {
 
     test('App passes "events" state as a prop to EventList', () => {
-        const AppWrapper = mount (<App />);
+        const AppWrapper = mount(<App />);
         const AppEventsState = AppWrapper.state('events');
         expect(AppEventsState).not.toEqual(undefined);
         expect(AppWrapper.find(EventList).props().events).toEqual(AppEventsState);
@@ -61,20 +61,20 @@ describe('<App /> integration', () => {
         const eventsToShow = allEvents.filter(event => event.location === selectedCity);
         expect(AppWrapper.state('events')).toEqual(eventsToShow);
         AppWrapper.unmount();
-      });
-   
+    });
+
 
     test('get list of all events when user selects "See all cities"', async () => {
-        const AppWrapper = mount(<App /> );
+        const AppWrapper = mount(<App />);
         const suggestionsItems = AppWrapper.find(CitySearch).find('.suggestions li');
-        await suggestionsItems.at(suggestionsItems.length -1).simulate('click');
+        await suggestionsItems.at(suggestionsItems.length - 1).simulate('click');
         const allEvents = await getEvents();
         expect(AppWrapper.state('events')).toEqual(allEvents);
         AppWrapper.unmount();
     })
 
     test('load 32 events by default', () => {
-        const AppWrapper = mount(<App /> );
+        const AppWrapper = mount(<App />);
         expect(AppWrapper.state('numberOfEvents')).toBe(32);
         AppWrapper.unmount();
     })
@@ -82,7 +82,7 @@ describe('<App /> integration', () => {
 
     test('pass number of events from the NumberOfEvents component to the App component', () => {
         const AppWrapper = mount(<App />);
-         //Component "NumberOfEvents"
+        //Component "NumberOfEvents"
         const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents)
         //Get input value
         NumberOfEventsWrapper.find('.numberOfEvents-input').at(0).simulate('change', { target: { value: 12 } })
