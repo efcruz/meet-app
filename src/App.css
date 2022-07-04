@@ -51,6 +51,7 @@ input[type="number"] {
 }
 
 .page-title-box {
+  display: flex;
   justify-content: center;
 }
 
@@ -98,6 +99,10 @@ input[type="number"] {
 
 .suggestions > li:hover {
   background-color: #bcdcdb;
+}
+
+.data-vis-wrapper {
+  justify-content: center;
 }
 
 .event-list-container{
@@ -275,5 +280,11 @@ input[type="number"] {
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .event {
+    width: 100%;
   }
 }

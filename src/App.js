@@ -94,8 +94,8 @@ class App extends Component {
           numberOfEvents={numberOfEvents}
           updateNumberOfEvents={this.updateNumberOfEvents} />
         <div className='data-vis-wrapper'>
-          <EventGenre events={events} />
-          <ResponsiveContainer height={400} >
+          <EventGenre className='pie-container' events={events} />
+          <ResponsiveContainer className='chart-container' height={400} >
             <ScatterChart
               margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
               <CartesianGrid strokeDasharray="3 3" />
