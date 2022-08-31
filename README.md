@@ -1,4 +1,31 @@
-# Features and User stories
+# meet App
+
+ This is a serverless, progressive web application (PWA) built with React using test-driven development (TDD). The application uses the Google Calendar API to fetch upcoming events.
+
+
+## How to install and run the project ...
+
+1. Clone or download repository ...
+```bash
+git clone https://github.com/efcruz/meet-app.git
+```
+
+2. Connect to your github pages 
+Follow the instructions provided by github: https://pages.github.com 
+
+3. Edit homepage address in package.json to fit to your github account
+
+4. To run app on localhost:
+```bash
+npm run start
+```
+
+5. To push changes to github pages
+```bash
+npm run deploy
+```
+
+## Features and User stories
 
 ## FEATURE 1: FILTER EVENTS BY CITY
 As a user, I would like to be able to filter events by city so that I can see the list of events that
@@ -76,3 +103,4 @@ As a user, I would like to be able to see a chart showing the upcoming events in
 Given the main page.
 When the user wants to see the upcoming events.
 Then a chart with the number of events in each city should be showed.
+
